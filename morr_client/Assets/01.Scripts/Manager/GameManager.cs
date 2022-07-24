@@ -8,6 +8,7 @@ public partial class GameManager : Singleton<GameManager>
     {
         base.Awake();
         DataManager.Instance.Init();
+        ServerManager.Instance.Init();
     }
 
 }
