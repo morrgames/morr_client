@@ -4,32 +4,64 @@ public enum RequestType
     GET,
     POST,
 }
-[Serializable]
-public class REGID_REQ
+
+public class ResBase
 {
     public int cmd;
+    public int status;
+}
+public class ReqBase
+{
+    public int cmd;
+    public int aidx;
+    public string session;
+ }
+[Serializable]
+public class REGID_REQ : ReqBase
+{
     public string login_id;
     public string uuid;
     public int login_type;
     public string name;
 }
 [Serializable]
-public class REGID_RES
+public class REGID_RES : ResBase
 {
-    //todo.
+    public Data data;
+
+    [Serializable]
+    public class Data
+    {
+        public string name;//흠..
+    }
 }
 
 [Serializable]
-public class LOGIN_REQ
+public class LOGIN_REQ :ReqBase
 {
-    public int cmd;
     public string login_id;
     public string uuid;
     public int login_type;
-    public int os_type;
 }
 [Serializable]
-public class LOGIN_RES
+public class LOGIN_RES : ResBase
 {
-   //todo.
+    public Data data;
+
+    [Serializable]
+    public class Data
+    {
+        public UserInfo user_info;
+    }
+
+    [Serializable]
+    public class UserInfo
+    {
+        public int aidx;
+        public string name;
+        public string login_id;
+        public int login_type;
+        public string uuid;
+        public string session;
+    }
 }

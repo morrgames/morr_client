@@ -6,14 +6,16 @@ public class Server : ServerBase
     {
         var data = new REGID_REQ()
         {
-            cmd = 101,
             login_id = loginId,
             uuid = uuid,
             login_type = login_type,
-            name = name
+            name = name,
+            
+            //=========
+            cmd = 101,
+            aidx = 0,
+            session = "",
         };
-
-        
         var res = await ServerManager.Instance.Request<T>(RequestType.POST, data);
         Observable.EventAsObservable().OnNext(new Observable.EventInfo(ObservableEvent.Event.OnSC_REGID, res));
         return res;
@@ -27,7 +29,6 @@ public class Server : ServerBase
             login_id = "test_id",
             uuid = "test_uuid",
             login_type = 0,
-            os_type = 0
         };
         var res = await ServerManager.Instance.Request<T>(RequestType.POST, data);
         Observable.EventAsObservable().OnNext(new Observable.EventInfo(ObservableEvent.Event.OnSC_LOGIN, res));

@@ -7,7 +7,7 @@ public partial class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        DataManager.Instance.Init();
+        //DataManager.Instance.Init();
         ServerManager.Instance.Init();
     }
 
