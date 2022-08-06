@@ -2,5 +2,5 @@
 
 public abstract class RequestBase
 {
-    public abstract UniTask<T> Run<T>();
+    public abstract UniTask<T> Run<T>() where T : class;
 }

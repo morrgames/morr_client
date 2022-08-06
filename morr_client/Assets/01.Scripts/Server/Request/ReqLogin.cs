@@ -4,15 +4,15 @@ using Cysharp.Threading.Tasks;
 
 public class ReqLogin : RequestBase
 {
-    public string login_id;
-    public string uuid;
-    public short login_type;
-    public short os_type;
+    public int os_type { get; set; }
+    public string login_id { get; set; }
+    public string uuid { get; set; }
+    public int login_type { get; set; }
 
-    public override async UniTask<T> Run<T>()
+
+    public override async UniTask<RES_LOGIN_DATA> Run<RES_LOGIN_DATA>()
     {
-            
-        var res = await ServerManager.Instance.server.Login<T>(login_id, uuid, login_type, os_type);
+        var res = await ServerManager.Instance.server.Login(os_type, login_id, uuid, login_type) as RES_LOGIN_DATA;
         return res;
     }
 }

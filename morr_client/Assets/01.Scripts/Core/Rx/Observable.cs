@@ -11,11 +11,12 @@ public static class Observable
         return eventStream;
     }
 
-    public static IDisposable Subscribe(ObservableEvent.Event _event, Action<EventInfo> _onEvent)
+    public static IDisposable Subscribe(GameObject gameObject, ObservableEvent.Event _event, Action<EventInfo> _onEvent)
     {
         return Observable.EventAsObservable()
             .Where(e => e.eventName == _event)
-            .Subscribe(_onEvent);
+            .Subscribe(_onEvent)
+            .AddTo(gameObject);
     }
 
     public class EventInfo
