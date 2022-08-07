@@ -16,7 +16,9 @@ public class PopupManager : Singleton<PopupManager>
             if (find == default(UIBase))
             {
                 rootPanel ??= GameObject.Find("Popups");
+                if (rootPanel == null) Debug.LogError("Popups를 찾을수없음");
                 GameObject temp = Resources.Load<GameObject>($"UI/{_popup}");
+                if (temp == null) Debug.LogError($"[{_popup}] 프리팹을 찾을수 없음.");
                 go = Instantiate(temp, rootPanel.transform, false);
                 go.name = go.name.Replace("(Clone)", "");
                 find = go.GetComponent<UIBase>();
