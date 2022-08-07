@@ -10,18 +10,16 @@ public class Test : MonoBehaviour
 
     private void Awake()
     {
-        btn01.OnClickAsObservable().Subscribe(_ =>
+        btn01?.OnClickAsObservable().Subscribe(_ =>
         {
             Debug.Log("버튼01 클릭");
             //do something...
             
-            
         }).AddTo(gameObject);
-        btn02.OnClickAsObservable().Subscribe(_ =>
+        btn02?.OnClickAsObservable().Subscribe(_ =>
         {
             Debug.Log("버튼02 클릭");
             //do something...
-            
             
             
         }).AddTo(gameObject);
