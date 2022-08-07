@@ -85,7 +85,7 @@ public class RTScenario : RTData
 public class RTQAConfig : RTData
 {
     public string m_Name;
-    public List<string> m_Values;
+    public List<string> m_Values = new List<string>();
 }
 public enum RTMergeResult
 {
