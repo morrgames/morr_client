@@ -3,9 +3,11 @@
     public enum Event
     {
         //events.
-        Test,
         OnComplete_LoadData,
+        OnUpdateLanguage,
         
+        //UI onClick.
+        OnClick_UpdateLanguage,
         
         //server.
         OnRecv_RegId,

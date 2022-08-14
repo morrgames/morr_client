@@ -37,4 +37,12 @@ public class SampleCode
         string sceneName = "0_Title";
         SceneLoader.Instance.LoadScene(sceneName).Forget();
     }
+
+    public void T_LocalizedText()
+    {
+        //로컬라이징.
+        LocalizedTMP temp = null;
+        temp.SetText("key");//기본형.
+        temp.SetText("key", 100, 200);//args가 있는경우.
+    }
 }

@@ -6,8 +6,10 @@ public partial class DataManager : Singleton<DataManager>
 {
     public async UniTask Init()
     {
-        InitData_Event();
-        InitData_Player();
         await InitData_File();
+        InitData_PlayerPrefs();
+        InitData_ServerEvent();
+        InitData_ClientEvent();
+        InitData_Player();
     }
 }

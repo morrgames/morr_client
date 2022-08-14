@@ -1,4 +1,4 @@
-﻿public static class Constants
+﻿public static partial class Constants
 {
     public static class EXCEL
     {
@@ -16,10 +16,5 @@
         public static readonly string API_KEY = $"AIzaSyB9LOl4OWIhiDfXmYSk0beoJ59N4t20wwY";
     }
 
-    public static class SceneName
-    {
-        public static readonly string TITLE = "0_Title";
-        public static readonly string LOBBY = "1_Lobby";
-        public static readonly string INGAME = "2_InGame";
-    }
+    
 }

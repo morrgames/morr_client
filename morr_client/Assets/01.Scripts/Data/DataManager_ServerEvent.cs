@@ -2,7 +2,7 @@
 
 public partial class DataManager
 {
-    private void InitData_Event()
+    private void InitData_ServerEvent()
     {
         Observable.Subscribe(gameObject, ObservableEvent.Event.OnRecv_RegId, OnRecv_RegId);
         Observable.Subscribe(gameObject, ObservableEvent.Event.OnRecv_Login, OnRecv_Login);
